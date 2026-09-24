@@ -1,0 +1,14 @@
+本项目当前无法在本开发环境直接生成 Windows EXE。
+
+原因：当前开发环境为 Linux x86_64，没有 Windows 构建环境，也无法联网安装 PyInstaller 的 Windows 构建依赖。
+
+最简单的 Windows 打包方式：
+1. 在 Windows 电脑把整个项目文件夹保存下来。
+2. 若电脑已经安装 Python 3.x，双击 build_windows.bat。
+3. 脚本会自动安装 Pillow / PyInstaller，并生成 dist\图片随机测试.exe。
+
+不想在 Windows 安装 Python 时，可以使用项目内的 .github/workflows/build-windows.yml：
+- 将整个项目上传到自己的 GitHub 仓库；
+- 在仓库的 Actions 页面手动运行 “Build Windows EXE”；
+- 构建完成后下载名为“图片随机测试-Windows-x64”的 Artifact；
+- Artifact 中就是可直接双击运行的单文件 EXE。
